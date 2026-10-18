@@ -1,6 +1,4 @@
 const API_URL = `${import.meta.env.VITE_API_URL}/api/products`;
-import { update } from './../../node_modules/sweetalert2/src/instanceMethods/update';
-import { Ellipse2 } from './../../node_modules/lightningcss/node/ast.d';
 
 const request = async (url, option) => {
     const response = await fetch(url, option);

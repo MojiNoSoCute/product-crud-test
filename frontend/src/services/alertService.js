@@ -1,5 +1,4 @@
 import Swal from "sweetalert2";
-import { error } from "sweetalert2/src/utils/utils";
 
 const getErrorMessage = (error) => {
     if (typeof error === "string") return error;

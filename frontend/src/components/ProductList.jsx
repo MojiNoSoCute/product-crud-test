@@ -1,8 +1,5 @@
 import React from 'react'
 import { Package, Pencil, Trash2 } from 'lucide-react'
-import { map } from './../../node_modules/zod/src/v4/classic/schemas';
-import src from './../../node_modules/vite/client.d';
-import { ClassSubtraction } from './../../node_modules/@eslint-community/regexpp/index.d';
 
 const ProductList = ({ products, onEdit, onDelete }) => {
     if (products.length === 0) {
