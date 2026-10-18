@@ -1,5 +1,4 @@
 import { Pencil, PlusCircle, X } from "lucide-react";
-import { type } from './../../node_modules/@oxc-project/types/types.d';
 import productRouter from "../../../backend/router/productRouter";
 
 function ProductForm({
