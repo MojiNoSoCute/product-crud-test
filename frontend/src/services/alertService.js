@@ -21,7 +21,7 @@ const showError = (error) =>
 const showSuccess = (title, text) =>
     Swal.fire({
         icon: "success",
-        tiile,
+        title,
         text,
         timer: 1600,
         showConfirmButton: false

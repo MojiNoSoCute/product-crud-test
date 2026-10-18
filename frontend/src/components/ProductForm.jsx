@@ -61,7 +61,7 @@ function ProductForm({
                     </label>
                     <div className="flex flex-col gap-2 md:col-span-2 md:flex-row md:justify-end">
                         <button className="btn btn-primary w-full md:w-auto" type="submit" disabled={isSubmitting}>
-                            {isSubmitting ? (<span className="`loading loading-spinner loading-sm"/>
+                            {isSubmitting ? (<span className="loading loading-spinner loading-sm"/>
                             ) : editingId ? (
                                 <Pencil className="size-4" />
                             ) : (
@@ -70,7 +70,7 @@ function ProductForm({
                             {isSubmitting ? "กำลังบันทึก..." : editingId ? "บันทึกการแก้ไข" : "บันทึกข้อมูล"}
                         </button>
                         <button className="btn btn-ghost w-full md:w-auto" type="button" onClick={onCancel} disabled={isSubmitting}>
-                            <x className="size-4"/> ยกเลิก
+                            <X className="size-4"/> ยกเลิก
                         </button>
                     </div>
                 </form>

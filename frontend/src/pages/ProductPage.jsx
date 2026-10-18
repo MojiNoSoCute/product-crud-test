@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router"
 import ProductHeader from '../components/ProductHeader'
 import ProductList from '../components/ProductList'
-import { deleteProduct, getProduct } from '../services/productService'
+import { deleteProduct, getProducts } from '../services/productService'
 import { confirmDelete, showError, showSuccess } from '../services/alertService'
 import { error } from 'sweetalert2/src/utils/utils';
 
 const ProductPage = () => {
     const navigate = useNavigate();
-    const [products, setProduct] = useState([]);
+    const [products, setProducts] = useState([]);
     const [loading, setloading] = useState(false);
     const [error, setError] = useState("")
     useEffect(() => {
@@ -16,7 +16,7 @@ const ProductPage = () => {
             setloading(true);
             setError("");
             try {
-                setProduct(await getProduct());
+                setProducts(await getProducts());
             } catch (error) {
                 setError(error.message);
             } finally {
@@ -49,7 +49,11 @@ const ProductPage = () => {
                     </Link>
                 </div>
                 {!loading && (
-                    <ProductList products={products} onEdit={(products) => navigate(`/product/${products.id}/edit`)}/>
+                    <ProductList 
+                        products={products} 
+                        onEdit={(products) => navigate(`/product/${products.id}/edit`)}
+                        onDelete={handelDelete}
+                    />
                 )}
             </div>
         </main>

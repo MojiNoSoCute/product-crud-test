@@ -11,7 +11,7 @@ import { name } from './../../node_modules/eslint/lib/rules/utils/ast-utils';
 
 function ProductFormPage({ isEditing = false }) {
     const navigate = useNavigate();
-    const { id } = useParams;
+    const { id } = useParams();
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
@@ -59,10 +59,10 @@ function ProductFormPage({ isEditing = false }) {
             if (isEditing) {
                 await updateProduct(id, product);
             } else {
-                await createProduct(id, product);
+                await createProduct(product);
             }
             await showSuccess(isEditing ? "แก้ไขสินค้าสำเร็จ" : "เพิ่มสินค้าสำเร็จ")
-            navigate("products");
+            navigate("/products");
         } catch (requestError) {
             showError(requestError);
         } finally {
@@ -83,10 +83,10 @@ function ProductFormPage({ isEditing = false }) {
                         description={description}
                         image={image}
                         isSubmitting={isSubmitting}
-                        onNameChange={onNameChange}
-                        onPriceChange={onPriceChange}
-                        onDescriptionChange={onDescriptionChange}
-                        onImageChange={onImageChange}
+                        onNameChange={setName}
+                        onPriceChange={setPrice}
+                        onDescriptionChange={setDescription}
+                        onImageChange={setImage}
                         onSubmit={handleSubmit}
                         onCancel={() => navigate("/products")}
                         />

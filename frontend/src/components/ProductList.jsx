@@ -26,7 +26,7 @@ const ProductList = ({ products, onEdit, onDelete }) => {
             </div>
             <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
                 {products.map((product) => (
-                    <article className='card overflow-hidden border border-base-300 bg-base-100 shadow-sm transition-shadow hover:shadow-md' key={productRouter.id}>
+                    <article className='card overflow-hidden border border-base-300 bg-base-100 shadow-sm transition-shadow hover:shadow-md' key={product.id}>
                         <figure className='aspect-[4/3] bg-base-200'>
                         {product.image ? (
                             <img className='h-full w-full object-cover' src={product.image} alt={product.name}/>
